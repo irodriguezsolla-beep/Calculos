@@ -38,7 +38,7 @@ if __name__=='__main__':
     c2 = calculadora(2,0)
     print(c2.calcular("/"))
 
-    try:#escepción
+    try:
         print(c2.calcular("/"))
     except ZeroDivisionError:
         print("No se pode dividir por cero")
