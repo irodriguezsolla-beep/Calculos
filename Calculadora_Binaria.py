@@ -42,3 +42,5 @@ if __name__=='__main__':
         print(c2.calcular("/"))
     except ZeroDivisionError:
         print("No se pode dividir por cero")
+    finally:
+        print("Fin del programa")
