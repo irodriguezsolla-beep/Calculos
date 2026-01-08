@@ -37,7 +37,7 @@ if __name__=='__main__':
     print(c1.calcular("/"))
     c2 = calculadora(2,0)
 
-
+###escepcions
     try:
         print(c2.calcular("/"))
     except ZeroDivisionError:
