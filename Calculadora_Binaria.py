@@ -42,5 +42,10 @@ if __name__=='__main__':
         print(c2.calcular("/"))
     except ZeroDivisionError:
         print("No se pode dividir por cero")
+        b = int(input("Introduce un número distinto de 0: "))
+        while b == 0:
+            b = int(input("Introduce un número distinto de 0: "))
+        c2.b = b
+        print(c2.calcular("/"))
     finally:
         print("Fin del programa")
