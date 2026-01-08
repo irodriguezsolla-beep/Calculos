@@ -36,7 +36,7 @@ if __name__=='__main__':
     c1 = calculadora(14,15)
     print(c1.calcular("/"))
     c2 = calculadora(2,0)
-    print(c2.calcular("/"))
+
 
     try:
         print(c2.calcular("/"))
