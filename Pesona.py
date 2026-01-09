@@ -1,7 +1,7 @@
 class persoa:
     def __init__(self,nome,dni,idade):
         self.setNome(nome)
-        self.__dni = dni
+        self.setDni(dni)
         self.setIdade(idade)
 
     def setNome(self,nome):
@@ -14,29 +14,46 @@ class persoa:
 
     def setIdade(self,idade):
         if type(idade) == int:
-            self.__idade = idade
+            if idade >=0:
+                self.__idade = idade
+            else:
+                raise ValueError(f"O valor {idade} tenque ser maior que cero ")
         else:
-            self.__idade = ("Error")
+            raise TypeError(f"el tipo de {type(idade)} tiene que ser int")
     def getIdade(self):
         return self.__idade
+
+    def setDni(self,dni):
+        if type(dni) == str:
+            self.__dni = dni
+        else:
+            self.__dni = ("Error")
+    def getDni(self):
+        return self.__dni
+
+    nome = property(getNome,setNome)
+    idade = property(getIdade,setIdade)
+    dni = property(getDni,setDni)
 
     def __str__(self):
         return self.__nome + " " + str(self.__dni) + " " + str(self.__idade)
 if __name__=='__main__':
-    p = persoa("Alan",554380238,t)
     try:
-        print(p)
-    except ValueError:
-        print("Se tiene que poner un numero entero")
+        p = persoa("Alan","554380238","10")
+    except ValueError as e:
+        print("Error: " + str(e))
         intentos = 0
-
-        i = int(input("Introduce un número la edada: "))
-
-        while i == 0 and intentos < 2:
+        edade = int(input("Introduce la edad: "))
+        while edade < 0 and intentos < 2:
             intentos += 1
-            i = int(input("Introduce un número la edada: "))
-        p.idade = i
-
+            print("Edade non valida")
+            edade = int(input("Introduce un número la edada: "))
+        p = persoa("Alan","554380238",edade)
         print(p)
+
+    except TypeError as t:
+        print("Error: "+ str(t))
+
+
     finally:
         print("Fin del programa")
