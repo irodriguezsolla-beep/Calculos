@@ -23,7 +23,20 @@ class persoa:
     def __str__(self):
         return self.__nome + " " + str(self.__dni) + " " + str(self.__idade)
 if __name__=='__main__':
-    p = persoa("Alan",554380238,20)
+    p = persoa("Alan",554380238,t)
     try:
-        print(p.__init__())
-    except
+        print(p)
+    except ValueError:
+        print("Se tiene que poner un numero entero")
+        intentos = 0
+
+        i = int(input("Introduce un número la edada: "))
+
+        while i == 0 and intentos < 2:
+            intentos += 1
+            i = int(input("Introduce un número la edada: "))
+        p.idade = i
+
+        print(p)
+    finally:
+        print("Fin del programa")
