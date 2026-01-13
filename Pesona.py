@@ -24,10 +24,21 @@ class persoa:
         return self.__idade
 
     def setDni(self,dni):
-        if type(dni) == str:
-            self.__dni = dni
+        if len(dni)== 9:
+            if dni[-1:].isalpha():
+                if dni[:-1].isalpha():
+                    letraDni = "TRWAGMYFPDXBNJZSQVHLCKE"
+                    resto = int(dni[:-1]) % 23
+                    if letraDni[resto] == dni[-1:].upper():
+                        return True
+                    else:
+                        return False
+                else:
+                    raise ValueError("Letra del dni incorecta")
+            else:
+                raise ValueError("Los 8 primeros caracteres tien que ser numeros")
         else:
-            self.__dni = ("Error")
+            raise ValueError("Lonxitude incorecta")
     def getDni(self):
         return self.__dni
 
