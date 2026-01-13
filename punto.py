@@ -5,7 +5,10 @@ class Punto:
 
     def setX(self, x):
         if type(x)== int or type(x)== float:
-            self.__x = x
+            if x>=0:
+                self.__x = x
+            else:
+                raise ValueError(f"O valor de x ={x} no pertenece a primer cuadrante")
         else:
             raise TypeError(f"La clase {type(x)} tiene que ser int o float")
 
@@ -15,7 +18,10 @@ class Punto:
 
     def setY(self, y):
         if type(y) == int or type(y) == float:
-            self.__y = y
+            if y >= 0:
+                self.__y = y
+            else:
+                raise ValueError(f"O valor de y ={y} no pertenece a primer cuadrante")
         else:
             raise TypeError(f"La clase {type(y)} tiene que ser int o float")
     def getY(self):
@@ -28,13 +34,11 @@ class Punto:
 
 if __name__=='__main__':
     try:
-        p = Punto("2",1)
+        p = Punto(3,1)
     except TypeError as t:
         print("Error: "+ str(t))
-        x = float(input("Introduce el punto X: ")
 
-        while type(x) == int or type(x) == float  :
-            print("Punto no valido")
-            x = input("Introduce el punto X: ")
-        p  = Punto(x,1)
-        print(p)
+    except ValueError as e:
+        print("Error: " + str(e))
+
+    print(p)
