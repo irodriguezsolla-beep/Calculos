@@ -4,4 +4,4 @@ class DniError(Exception):
         super().__init__()
         self.mensaxe = mensaxe
     def __str__(self):
-        return "Error"+ str(self.mensaxe)
+        return "Error "+ str(self.mensaxe)

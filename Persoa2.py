@@ -26,30 +26,35 @@ class persoa:
 
     def setDni(self,dni):
         if type(dni) == str:
-            if len(dni) == 9 and dni[:-1].isdigit() and dni[:-1].isalpha():
-                letraDni = "TRWAGMYFPDXBNJZSQVHLCKE"
-                resto = int(dni[:-1])%23
-                if letraDni[resto] == dni[-1:].upper():
-                    return True
+            if len(dni) == 9 :
+                int(dni[:-1])
+                if dni[:-1].isdigit():
+                    if dni[-1:].isalpha():
+                        letraDni = "TRWAGMYFPDXBNJZSQVHLCKE"
+                        resto = int(dni[:-1]) % 23
+                        letra_correcta = letraDni[resto]
+                        if letra_correcta == dni[-1].upper():
+
+                            self.__dni = dni.upper()
+                        else:
+                            raise DniError(f"La letra no es ta entre las selecionadas para un DNI")
+                    else:
+                        raise DniError(f"Los 9 primeros digitos no son numeros")
                 else:
-                    return False
+                    raise DniError(f"El ultimo dígito no es una letra")
             else:
                 raise DniError(f"El numero de carateres no es el adecuado")
         else:
-            raise DniError(f"el tipo de {type(dni)} tiene que ser str")
+            raise TypeError(f"el tipo de {type(dni)} tiene que ser str")
     def getDni(self):
         return self.__dni
 
-    nome = property(getNome,setNome)
-    idade = property(getIdade,setIdade)
-    dni = property(getDni,setDni)
 
     def __str__(self):
-        return self.__nome + " " + str(self.__dni) + " " + str(self.__idade)
-
+        return (f"El nombre es: {self.__nome}, o DNI es: {self.__dni} y la edad es: {self.__idade}")
 if __name__=='__main__':
     try:
-        alan = persoa("alan","12345678T",20)
-        print("DNI válido:",p1.dni)
+        alan = persoa("Alan","12345678Z",20)
+        print("DNI válido:",alan)
     except DniError as e:
-        print("Error con p1:",e)
+        print("Error con p1: ",e)
