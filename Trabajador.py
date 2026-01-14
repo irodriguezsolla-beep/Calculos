@@ -10,7 +10,7 @@ class trabajador(persoa):
             raise NussError("La longitud de NUSS es inadecuada(16)")
         elif nuss[:2]!="/" or nuss[-3]!="/":
             raise NussError ("O formato é nn/nnnnnnnnn/nn. Error de formato")
-        elif nuss[:2].isdigit() or not nuss[3:-3] or not nuss[-2:]:
+        elif not nuss[:2].isdigit() or not nuss[3:-3].isdigit() or not nuss[-2:].isdigit():
             raise NussError("Formato de NUSS incorecto, error en los digitos")
         self.nuss=nuss
     def getNUSS(self):
