@@ -1,3 +1,4 @@
+from ErrorDNi import DniError
 class persoa:
     def __init__(self,nome,dni,idade):
         self.setNome(nome)
@@ -33,9 +34,9 @@ class persoa:
                 else:
                     return False
             else:
-                raise ValueError(f"El numero de carateres no es el adecuado")
+                raise DniError(f"El numero de carateres no es el adecuado")
         else:
-            raise TypeError(f"el tipo de {type(dni)} tiene que ser str")
+            raise DniError(f"el tipo de {type(dni)} tiene que ser str")
     def getDni(self):
         return self.__dni
 
@@ -47,3 +48,8 @@ class persoa:
         return self.__nome + " " + str(self.__dni) + " " + str(self.__idade)
 
 if __name__=='__main__':
+    try:
+        alan = persoa("alan","12345678T",20)
+        print("DNI válido:",p1.dni)
+    except DniError as e:
+        print("Error con p1:",e)
