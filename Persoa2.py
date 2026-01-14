@@ -54,7 +54,7 @@ class persoa:
         return (f"El nombre es: {self.__nome}, o DNI es: {self.__dni} y la edad es: {self.__idade}")
 if __name__=='__main__':
     try:
-        alan = persoa("Alan","12345678Z",20)
+        alan = persoa("Alan","00000000T",20)
         print("DNI válido:",alan)
     except DniError as e:
         print("Error con p1: ",e)
