@@ -1,4 +1,4 @@
-class DniError(Exception):
+class LicenciaError(Exception):
     def __init__(self, mensaxe):
         super().__init__()
         self.mensaxe = mensaxe
