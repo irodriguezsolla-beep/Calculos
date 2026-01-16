@@ -37,6 +37,9 @@ opcionUsuario = { "theme": "dark",
                   "font-size":14,
                   "show_line_number":True}
 
-with open ("opcions.dat","rb") as fich:
+with open ("opcions.dat","wb") as fich:#guardar
+    pickle.dump(opcionUsuario, fich)
+
+with open ("opcions.dat","rb") as fich:# leer
     ops = pickle.load(fich)
     print(ops)
