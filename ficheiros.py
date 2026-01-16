@@ -25,3 +25,10 @@ ficheiro = open("Editorial.txt", "r")
 lectura = ficheiro.read()
 print(lectura)
 ficheiro.close()
+
+fichero = open("saudo.txt","r")
+linha = fichero.readline()
+    while linha != None:
+        print(linha)
+        linha = fichero.readline()
+        ficheiro.close()
