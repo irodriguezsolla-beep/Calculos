@@ -32,3 +32,15 @@ while linha != "":                    # Mientras NO se llegue al final del archi
     print(linha, end="")              # Muestra la línea por pantalla sin añadir otro salto
     linha = fichero.readline()        # Lee la siguiente línea
 fichero.close()                       # Cierra el archivo
+
+ficheiro = open("saudo.txt", "r")        # Abrimos el archivo en modo lectura
+lectura = ficheiro.readlines()           # Leemos **todas las líneas** y las guardamos en una lista
+print(lectura)                           # Mostramos la lista en pantalla
+ficheiro.close()                         # Cerramos el archivo
+
+with open("saudo.txt", "r") as ficheiro: # Abrimos el archivo en modo lectura usando 'with' (se cierra automáticamente)
+   l = 0                                 # Inicializamos un contador de líneas
+   for linha in ficheiro:                # Recorremos línea por línea
+       l += 1                            # Sumamos 1 por cada línea
+   print(f"O ficheiro tem {l} linhas")  # Mostramos el total de líneas
+
