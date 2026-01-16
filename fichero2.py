@@ -20,12 +20,23 @@ fecha_hora_dict = {
     "mes": amd[1],
     "dia": amd[2],
     "hora": hms[0],
-    "minutos": hms[1],
+    "minuto": hms[1],
     "segundo": hms[2]
 }
 
 # Guardamos en un archivo binario usando pickle
-with open("data.dat", "wb") as ficheiro:
+with open("data.dat", "wb") as ficheiro: #write binary
     pickle.dump(fecha_hora_dict, ficheiro)
 
+with open("data.dat", "rb") as ficheiro: #read binary
+    dic = pickle.load(ficheiro)
+    print(dic["hora"])
+    print(dic["minuto"])
 
+opcionUsuario = { "theme": "dark",
+                  "font-size":14,
+                  "show_line_number":True}
+
+with open ("opcions.dat","rb") as fich:
+    ops = pickle.load(fich)
+    print(ops)
