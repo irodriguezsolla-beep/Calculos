@@ -26,9 +26,9 @@ lectura = ficheiro.read()
 print(lectura)
 ficheiro.close()
 
-fichero = open("saudo.txt","r")
-linha = fichero.readline()
-while linha != "":
-    print(linha)
-    linha = fichero.readline()
-ficheiro.close()
+fichero = open("saudo.txt", "r")      # Abre el archivo saudo.txt en modo lectura
+linha = fichero.readline()            # Lee la primera línea del archivo
+while linha != "":                    # Mientras NO se llegue al final del archivo
+    print(linha, end="")              # Muestra la línea por pantalla sin añadir otro salto
+    linha = fichero.readline()        # Lee la siguiente línea
+fichero.close()                       # Cierra el archivo
