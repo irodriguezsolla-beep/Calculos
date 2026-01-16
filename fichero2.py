@@ -43,3 +43,4 @@ with open ("opcions.dat","wb") as fich:#guardar
 with open ("opcions.dat","rb") as fich:# leer
     ops = pickle.load(fich)
     print(ops)
+#pickle: dump y load
