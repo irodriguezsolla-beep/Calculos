@@ -28,7 +28,7 @@ ficheiro.close()
 
 fichero = open("saudo.txt","r")
 linha = fichero.readline()
-    while linha != None:
-        print(linha)
-        linha = fichero.readline()
-        ficheiro.close()
+while linha != "":
+    print(linha)
+    linha = fichero.readline()
+ficheiro.close()
