@@ -46,3 +46,14 @@ funcionDecorativa()
 decorador(saudo)
 
 print(funcionDecorativa)
+
+def decorador2(func):
+    def envoltorio (*args, **kargs):
+        print("antes de executar")
+        resultado = func(*args,**kargs)
+        print("despis da execucion")
+        return resultado
+    return envoltorio
+
+s = decorador2(suma)(3,3)
+print(s)
