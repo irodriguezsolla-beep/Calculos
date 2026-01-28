@@ -37,6 +37,7 @@ class Deportista:
         return self.__club
 
     def setLicencia(self,licencia):
+
         if type(licencia) == str:
             if len(licencia) == 13:
                 if licencia[:4].isdigit() and licencia[:4] == "2026":

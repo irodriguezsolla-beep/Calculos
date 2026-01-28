@@ -57,3 +57,9 @@ def decorador2(func):
 
 s = decorador2(suma)(3,3)
 print(s)
+
+class Punto4:
+    def __init__(self,x,y):
+        self.setX(x)
+
+propieadades

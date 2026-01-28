@@ -1,9 +1,11 @@
 from DataError import DataError
 class Data:
     def __init__(self,dia,mes,ano):
-        self.setDia(dia)
-        self.setMes(mes)
         self.setAno(ano)
+        self.setMes(mes)
+        self.setDia(dia)
+
+
 
     def setDia(self,dia):
         if type(dia) == int:
