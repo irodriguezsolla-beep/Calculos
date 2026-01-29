@@ -1,5 +1,5 @@
 from bastracto import Vehiculo
-from abc import ABC, abstractmethod
+from abc import ABC
 class Terrestre(Vehiculo,ABC):
     def __init__(self,matricula,velocidadeMaxima,autonomia,numeroRodas):
         super().__init__(matricula,velocidadeMaxima,autonomia)
