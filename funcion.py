@@ -63,3 +63,16 @@ class Punto4:
         self.setX(x)
 
 propieadades
+_----------------------------------------------------------------------------------------------------
+
+from abc import ABC, abstractmethod
+class Vehiculo(ABC):
+    def __str__(self, matricula, velocidadeMaxima, autonomia):
+        self.matrcula = matricula
+
+    @property
+    def matricula(self):
+        self._matrcula
+    @matricula.setter
+    def matricula(self,matricula):
+        self._matricula = matricula
