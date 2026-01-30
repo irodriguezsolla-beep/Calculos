@@ -14,7 +14,7 @@ class CocheAutonomo(Terrestre):
     def arrincar(self):
         print(f"O coche autonomo arrinca")
     def mostrardatos(self):
-        print(f"La matricula: {self._matricula}, VelocidadMaxima: {self._velocidadeMaxima}, Autonimia: {self._autonomia}, Número de rodas: {self._numeroRodas}, Numero de prazas: {self._numeroPrazas} ")
+        print(f"La matricula: {self._matricula}, VelocidadMaxima: {self._velocidadeMaxima}, Autonimia: {self._autonomia}, Número de rodas: {self._numero_rodas}, Numero de prazas: {self._numeroPrazas} ")
 
 
 coche = CocheAutonomo(1231,234,123,4,5)

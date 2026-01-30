@@ -8,7 +8,7 @@ class Vehiculo(ABC):
     def setMatricula(self,matricula):
          self._matricula = matricula
     def getMatricula(self):
-        return  self.__matricula
+        return  self._matricula
 
     def setVelocidad(self, velocidadeMaxima):
         self._velocidadeMaxima = velocidadeMaxima
@@ -16,7 +16,7 @@ class Vehiculo(ABC):
         return self._velocidadeMaxima
 
     def setAutonomia(self,autonimia):
-         self.__autonima = autonimia
+         self._autonomia = autonimia
     def getAutonomia(self):
         return  self._autonomia
 
